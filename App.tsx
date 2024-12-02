@@ -3,6 +3,7 @@ import React from 'react'
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreenASSM from './Components/HomeScreen/HomeScreenASSM';
+import OrderPage from './Components/OrderPage/OrderPage';
 const stackNavigator = createNativeStackNavigator();
 
 const App = () => {
@@ -14,6 +15,11 @@ const App = () => {
         options={{header: () => null}}
         name="HomeScreenASSM"
         component={HomeScreenASSM}
+      />
+      <stackNavigator.Screen
+        options={{header: () => null}}
+        name="OrderPage"
+        component={OrderPage}
       />
       </stackNavigator.Navigator>
       </NavigationContainer>

@@ -4,7 +4,9 @@ import MaterialIconCom from 'react-native-vector-icons/MaterialCommunityIcons'
 import IonicIcons from 'react-native-vector-icons/Ionicons'
 import SVG_5 from '../SVGs/SVG_5'
 import { Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 const HomeScreenASSM = () => {
+  const navigation = useNavigation()
   return (
     <View style={{width:Dimensions.get('screen').width ,  height:Dimensions.get('screen').height , backgroundColor:'black'}}>
       <View style={styles.SearchContainerView}>
@@ -84,7 +86,7 @@ const HomeScreenASSM = () => {
               , {image:require(`../SVGs/M.jpg`) , name:"Milkshake",category:'Drink' , type:"Frozen Drink"}  ]}
             renderItem={({item , index})=>{
               return(
-                <View style={{width:'95%' , height:130 , backgroundColor:'white' ,
+                <Pressable onPress={()=>navigation.navigate("OrderPage")} style={{width:'95%' , height:130 , backgroundColor:'white' ,
                  marginVertical:10 , alignItems:'center' , 
                  justifyContent:'center' , alignSelf:'center' , flexDirection:'row' , 
                   marginBottom:item.name === 'Milkshake'?500 :10 ,
@@ -111,7 +113,7 @@ const HomeScreenASSM = () => {
 </Pressable>
                     </View>
                    </View>
-                </View>
+                </Pressable>
               )
             }}
             />
